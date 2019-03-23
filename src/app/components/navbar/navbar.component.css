@@ -1,0 +1,44 @@
+/* 2.- Navigation bar section */
+/*-------------------------------------*/
+.topnav {
+	background-color: #126D9B; /* background color to the top navigation */
+	overflow: hidden;
+	position: fixed; 	/* Set the navbar to fixed position */
+	top: 0; 	/* Position the navbar at the top of the page */
+	width: 100%; 	/* Full width */
+	height: 6%; 	/* Height of our Top Navigation Bar */
+	z-index: 1;  /* On top of images */
+
+}
+
+/* Styling the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 3% 16px;
+	text-decoration: none;
+	font-size: 1em; /* 16px / 16px */
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+	color: #D8FBE8;
+	font-weight: 400;
+}
+
+/* Color to the active/current link */
+.topnav a.active {
+	color: #D8FBE8;
+	font-weight: 600;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+	float: right;
+}
+
+/* We want the logo takes all height in the navigation bar*/
+.img_logo {
+	height: 100%;
+}

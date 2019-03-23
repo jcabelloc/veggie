@@ -1,0 +1,18 @@
+/* 3.- Banner Image Section */
+/*-------------------------------------*/
+/* Set the banner on the left corner */
+.shop {
+	position: relative;
+	top: 0; 
+	left: 0;
+}
+
+/*Image banner takes full width from the left corner*/
+.shop_img{
+    margin-top: 4%;
+	width:100%;
+	position: relative;
+	top: 0;
+    left: 0;
+    opacity: 0.7
+}
