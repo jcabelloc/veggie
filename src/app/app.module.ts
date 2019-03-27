@@ -9,6 +9,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ListProductsComponent } from './components/list-products/list-products.component';
+
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +24,15 @@ import { ProductsComponent } from './components/products/products.component';
     FooterComponent,
     HomeComponent,
     ShopComponent,
-    ProductsComponent
+    ProductsComponent,
+    ListProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase, 'app-veggie'),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

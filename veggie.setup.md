@@ -109,3 +109,48 @@ To use the mat-icon component with the official Material Design Icons, load the 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
 
+## Aditional Configurations
+* Reference: https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
+### Install AngularFire and Firebase
+```bash
+npm install @angular/fire firebase --save
+```
+
+### Add Firebase config to environments variable
+* Open /src/environments/environment.ts and add your Firebase configuration. You can find your project configuration in the Firebase Console. From the project overview page, click Add Firebase to your web app.
+```ts
+
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: '<your-key>',
+    authDomain: '<your-project-authdomain>',
+    databaseURL: '<your-database-URL>',
+    projectId: '<your-project-id>',
+    storageBucket: '<your-storage-bucket>',
+    messagingSenderId: '<your-messaging-sender-id>'
+  }
+};
+```
+
+### Setup @NgModule for the AngularFireModule
+Open /src/app/app.module.ts, inject the Firebase providers, and specify your Firebase configuration.
+```ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+@NgModule({
+  imports: [
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase, 'app-veggie'),
+    AngularFirestoreModule,
+  ],
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ]
+})
+export class AppModule {}
+```
