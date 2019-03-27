@@ -1,7 +1,20 @@
-<div>
-  <ul>
-    <li *ngFor="let product of products">
-      <img [src]="product.url"/>
-    </li>
-  </ul>
+<div class="container">
+  <mat-card *ngFor="let product of products" class="example-card box">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{product.name}}</mat-card-title>
+      <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="product.url" alt="product.filename">
+    <mat-card-content>
+      <p>
+        ... {{product.name}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>ADD</button>
+    </mat-card-actions>
+  </mat-card>
+
 </div>

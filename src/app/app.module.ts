@@ -18,6 +18,11 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +31,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     HomeComponent,
     ShopComponent,
     ProductsComponent,
-    ListProductsComponent
+    ListProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFireModule.initializeApp(environment.firebase, 'app-veggie'),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    MatCardModule,
+    MatButtonModule,
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
