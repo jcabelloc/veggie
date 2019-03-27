@@ -15,6 +15,7 @@ import { ListProductsComponent } from './components/list-products/list-products.
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase, 'app-veggie'),
     AngularFirestoreModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

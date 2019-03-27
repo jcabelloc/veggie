@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { Product } from '../models/Product'
 import { map } from 'rxjs/operators';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,10 @@ import { map } from 'rxjs/operators';
 export class ProductService {
   private productsCollection: AngularFirestoreCollection<Product>;
   private products: Observable<Product[]>;
-  constructor(private afs: AngularFirestore) {
+  private productUrl: Observable<string | null>;
+
+  constructor(private afs: AngularFirestore, 
+    private storage: AngularFireStorage) {
     this.productsCollection = afs.collection<Product>('products');
   }
 
@@ -25,5 +29,10 @@ export class ProductService {
     );
     return this.products;
 
+  }
+
+  getProductImgUrl(filename: string){
+    const ref = this.storage.ref('products/' + filename);
+    return this.productUrl = ref.getDownloadURL();
   }
 }

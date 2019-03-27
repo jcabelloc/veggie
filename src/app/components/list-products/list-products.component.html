@@ -1,3 +1,7 @@
-<p>
-  list-products works!
-</p>
+<div>
+  <ul>
+    <li *ngFor="let product of products">
+      <img [src]="product.url"/>
+    </li>
+  </ul>
+</div>
