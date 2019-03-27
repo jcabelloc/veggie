@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/product';
 
+import { MatDialog } from '@angular/material';
+import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
+
+
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
@@ -10,7 +14,8 @@ import { Product } from 'src/app/models/product';
 export class ListProductsComponent implements OnInit {
 
   public products: Product[];
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
     this.productService.getProducts().subscribe(
@@ -26,5 +31,18 @@ export class ListProductsComponent implements OnInit {
         )
       }
     )
+  }
+
+  openDialog(idProduct: string): void {
+    const dialogRef = this.dialog.open(AddToCartComponent, {
+      width: '250px',
+      //data: {idProduct: this.idProduct}
+      data: idProduct
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //this.animal = result;
+    });
   }
 }

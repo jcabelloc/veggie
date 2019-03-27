@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ShopComponent } from './components/shop/shop.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
+import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 
 
 import { AngularFireModule } from '@angular/fire';
@@ -21,7 +22,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 
-
+import { MatDialogModule } from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { MatButtonModule } from '@angular/material/button';
     ShopComponent,
     ProductsComponent,
     ListProductsComponent,
+    AddToCartComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,8 +44,10 @@ import { MatButtonModule } from '@angular/material/button';
     AngularFireStorageModule,
     MatCardModule,
     MatButtonModule,
+    MatDialogModule,
   ],
-  
+  entryComponents: [AddToCartComponent ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
