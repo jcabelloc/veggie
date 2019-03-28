@@ -1,18 +1,100 @@
-/* 3.- Banner Image Section */
-/*-------------------------------------*/
-/* Set the banner on the left corner */
-.shop {
-	position: relative;
-	top: 0; 
-	left: 0;
+/*The Hero component container*/
+.hero_comp{
+    width: 100%;
+    background-color: black;
 }
 
-/*Image banner takes full width from the left corner*/
-.shop_img{
-    margin-top: 4%;
-	width:100%;
-	position: relative;
-	top: 0;
-    left: 0;
-    opacity: 0.7
+/*The Hero bg Image container*/
+.hero_img_container{
+    background-image: url('/assets/6.jpg');
+    background-position: 50% 0;
+    width: 100%;
+    height: inherit;
+    background-size: cover;
+    opacity: 0.5;
+}
+
+/*The Hero Text Container*/
+.prod_hero_txt{
+    opacity: 1;
+    text-align:center;
+    color:white;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+}
+
+/*The Hero title container*/
+.prod_hero_head_txt{
+    letter-spacing: 0.1em;
+    font-family: avenir-lt-w01_35-light1475496,sans-serif;
+    margin: 5% 10%;
+    text-transform:uppercase;
+    font-size: 3.75em;
+    line-height: 1.1em;
+    text-align: center;
+}
+
+/*The Hero subtext container*/
+.prod_hero_sub_txt{
+    font-size:1.75em;
+    letter-spacing: 0em;
+    font-family:avenir-lt-w01_35-light1475496,sans-serif;
+    line-height:1.3em;
+    margin: 5% 10%;
+    text-transform:uppercase;
+}
+/*The scroll text container*/
+.prod_hero_scroll_txt{
+    font-family:didot-w01-italic,serif;
+    font-size: 1.375em;
+    margin: 2% 5%;
+}
+
+/*The centered clas  to center the hero text overlay*/
+.centered {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/*Media query for min width:1024px*/
+@media only screen and (min-width: 1024px){
+/*    Seeting em size */
+    body{
+        font-size:16px;
+    }
+/*Setting the container size*/
+    .hero_comp{
+        height: 425px;
+        min-width: 920px;
+    }
+}
+
+/*Media query for min width:600px and max width:1023px*/
+@media only screen and (min-width: 600px) and (max-width: 1023px){
+    /*    Seeting em size */
+    body{
+        font-size:12px;
+    }
+    /*Setting the container size*/
+    .hero_comp{
+        height: 360px;
+        min-width: 320px;
+    }
+}
+
+/*Media query for max width:600px*/
+@media only screen and (max-width: 600px) {
+    /*    Seeting em size */
+    body{
+        font-size:10px;
+    }
+    /*Setting the container size*/
+    .hero_comp{
+        height: 310px !important;
+        min-width: 320px;
+    }
 }
