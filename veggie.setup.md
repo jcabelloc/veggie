@@ -109,7 +109,7 @@ To use the mat-icon component with the official Material Design Icons, load the 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
 
-## Aditional Configurations
+## Add Firestore to Veggie Project
 * Reference: https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
 ### Install AngularFire and Firebase
 ```bash
@@ -154,3 +154,5 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 })
 export class AppModule {}
 ```
+
+## 

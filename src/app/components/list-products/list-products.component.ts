@@ -35,7 +35,7 @@ export class ListProductsComponent implements OnInit {
 
   openDialog(idProduct: string): void {
     const dialogRef = this.dialog.open(AddToCartComponent, {
-      width: '250px',
+      width: '450px',
       //data: {idProduct: this.idProduct}
       data: idProduct
     });

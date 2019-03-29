@@ -21,8 +21,10 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule }   from '@angular/forms';
 
-import { MatDialogModule } from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { MatDialogModule } from '@angular/material/dialog'
     MatCardModule,
     MatButtonModule,
     MatDialogModule,
+    MatInputModule,
+    FormsModule,
   ],
   entryComponents: [AddToCartComponent ],
 

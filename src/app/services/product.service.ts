@@ -11,7 +11,6 @@ import { AngularFireStorage } from '@angular/fire/storage';
 export class ProductService {
   private productsCollection: AngularFirestoreCollection<Product>;
   private products: Observable<Product[]>;
-  private productUrl: Observable<string | null>;
 
   constructor(private afs: AngularFirestore, 
     private storage: AngularFireStorage) {
@@ -33,6 +32,10 @@ export class ProductService {
 
   getProductImgUrl(filename: string){
     const ref = this.storage.ref('products/' + filename);
-    return this.productUrl = ref.getDownloadURL();
+    return ref.getDownloadURL();
+  }
+
+  getProductById(id: string) {
+    return this.afs.collection('products').doc<Product>(id).valueChanges();
   }
 }
