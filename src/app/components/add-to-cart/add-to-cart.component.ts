@@ -2,6 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/Product';
+import { CartService } from 'src/app/services/cart.service';
+import { Cart } from 'src/app/models/Cart';
 
 
 @Component({
@@ -12,9 +14,12 @@ import { Product } from 'src/app/models/Product';
 export class AddToCartComponent implements OnInit {
   product: Product;
   quantity: number;
+  user: string = 'admin';
+  cart: Cart;
   constructor(public dialogRef: MatDialogRef<AddToCartComponent>,
     @Inject(MAT_DIALOG_DATA) public idProduct: string,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService,
     ) { }
 
   ngOnInit() {
@@ -30,12 +35,31 @@ export class AddToCartComponent implements OnInit {
               }
             )
         }
-      )
-
+      );
+    this.cartService.getCartByUser(this.user).subscribe(
+      cart => {
+        this.cart = cart;
+      }
+    );
+    
     }
     onSubmit({value, valid}: {value: any, valid: boolean}) {
-      console.log(this.quantity + " - "  + this.idProduct);
-
+      let isOnCart: boolean = false;
+      // Obtain the current quantity of this product on car
+      this.cart.productsOnCart.map(e => {
+          if (e.idProduct == this.idProduct) {
+            e.quantity = e.quantity + this.quantity;
+            isOnCart = true;
+          }
+        })
+      // Add new product to cart
+      if (!isOnCart) 
+        this.cart.productsOnCart.push({
+          'idProduct': this.idProduct, 
+          'quantity': this.quantity
+        });
+      this.cartService.updateCart(this.cart);
+      this.dialogRef.close();
     }
   }
 

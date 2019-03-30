@@ -21,6 +21,7 @@ export class ListProductsComponent implements OnInit {
     this.productService.getProducts().subscribe(
       products => {
         this.products = products;
+        console.log(this.products)
         this.products.forEach(
           e => {
             this.productService.getProductImgUrl(e.filename)
@@ -36,13 +37,11 @@ export class ListProductsComponent implements OnInit {
   openDialog(idProduct: string): void {
     const dialogRef = this.dialog.open(AddToCartComponent, {
       width: '450px',
-      //data: {idProduct: this.idProduct}
       data: idProduct
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      //this.animal = result;
     });
   }
 }
