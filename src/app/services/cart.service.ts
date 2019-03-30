@@ -11,6 +11,7 @@ export class CartService {
   constructor(private afs: AngularFirestore) { }
 
   // deprecated
+  /*
   addProduct(user: string, idProduct: string, quantity: number) {
 
     // Retrieve user cart
@@ -19,14 +20,14 @@ export class CartService {
         let isOnCart: boolean = false;
         // Obtain the current quantity of this product on car
         e.productsOnCart.map(e => {
-          if (e.idProduct == idProduct) {
+          if (e.id == idProduct) {
             e.quantity = e.quantity + quantity;
             isOnCart = true;
           }
         })
         // Add new product to cart
         if (!isOnCart) 
-          e.productsOnCart.push({'idProduct': idProduct, 'quantity': quantity});
+          e.productsOnCart.push({'id': idProduct, 'quantity': quantity});
         
         // Update the user cart
         this.updateCart(e)
@@ -34,11 +35,8 @@ export class CartService {
       }
       
     )
-    
-
-
-    
-  }
+   }
+  */
 
   updateCart(cart: Cart){
     return this.afs.doc<Cart>('carts/'+cart.user).update(cart);

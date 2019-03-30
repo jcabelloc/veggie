@@ -47,7 +47,7 @@ export class AddToCartComponent implements OnInit {
       let isOnCart: boolean = false;
       // Obtain the current quantity of this product on car
       this.cart.productsOnCart.map(e => {
-          if (e.idProduct == this.idProduct) {
+          if (e.id == this.idProduct) {
             e.quantity = e.quantity + this.quantity;
             isOnCart = true;
           }
@@ -55,8 +55,11 @@ export class AddToCartComponent implements OnInit {
       // Add new product to cart
       if (!isOnCart) 
         this.cart.productsOnCart.push({
-          'idProduct': this.idProduct, 
-          'quantity': this.quantity
+          'id': this.idProduct, 
+          'quantity': this.quantity,
+          'name': this.product.name,
+          'filename': this.product.filename,
+          'price': this.product.price,
         });
       this.cartService.updateCart(this.cart);
       this.dialogRef.close();

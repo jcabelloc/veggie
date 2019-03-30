@@ -1,5 +1,6 @@
-export interface ProductOnCart {
-    idProduct: string;
+import { Product } from './Product';
+
+export interface ProductOnCart extends Product{
     quantity: number;
 }
 
