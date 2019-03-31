@@ -1,24 +1,25 @@
-.example-card {
-    max-width: 400px;
-  }
-  
-  .example-header-image {
-    background-image: url('/assets/cow_logo.png');
-    background-size: cover;
-  }
 
+  
   .container::after {
     content: "";
     clear: both;
     display: table;
-    margin: 0 auto;
   }
 
-  .box {
-    float: left;
-    width: 31%;
-    min-width: 300px;
-    padding: 50px;
-    margin-left: 1%;
-    margin-right: 1%;
+  .container {
+    width: 50%;
+    min-width: 800px;
+    margin: 5% auto;
   }
+  
+  .example-card {
+    float: left;
+    width: 26%;
+    min-width: 100px;
+    margin: 1%;
+
+  }
+  .img-card{
+    height: 160px;
+  }
+  
