@@ -155,4 +155,38 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 export class AppModule {}
 ```
 
-## 
+## Deploy web project on Firebase Hosting
+* Reference: https://firebase.google.com/docs/hosting/quickstart
+
+### Install the Firebase CLI using npm by running
+```bash
+npm install -g firebase-tools
+```
+
+### Sign into Firebase using your Google account by running
+```bash
+firebase login
+```
+
+### Test that authentication worked 
+```bash
+firebase list
+```
+
+### Initialize your project
+To connect your local project to your Firebase project, run the following command from the root of your local project directory
+```bash
+firebase init
+```
+* Select to set up Hosting.
+* Select a Firebase project to connect to your local project directory.
+* Specify a directory to use as your public root directory: dist/veggie
+* Choose a configuration for your site: (Y) single-page app
+* Do not replace index.html: (N) rewrite index.html
+
+### Deploy to your site
+```bash
+firebase deploy
+```
+### Visit your web site
+https://veggie-7c023.firebaseapp.com/shop
