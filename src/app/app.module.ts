@@ -11,7 +11,7 @@ import { ShopComponent } from './components/shop/shop.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
-
+import { CartComponent } from './components/cart/cart.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -24,7 +24,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule }   from '@angular/forms';
-import { CartComponent } from './components/cart/cart.component';
+import { MatTableModule } from '@angular/material/table';
+
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { CartComponent } from './components/cart/cart.component';
     MatDialogModule,
     MatInputModule,
     FormsModule,
+    MatTableModule,
   ],
   entryComponents: [AddToCartComponent ],
 

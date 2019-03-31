@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
+export interface Transaction {
+  item: string;
+  price: number;
+  quantity?: number;
+  total?: number;
+}
+
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -9,6 +17,10 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
 
   user: string = 'admin';
+
+  displayedColumns: string[] = ['item', 'price', 'quantity', 'total'];
+  transactions: Transaction[];
+
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
@@ -16,10 +28,23 @@ export class CartComponent implements OnInit {
     this.cartService.getCartByUser(this.user)
       .subscribe(
         cart => {
-          console.log(cart);
+          this.transactions = [];
+          cart.productsOnCart.forEach(
+            e => {
+              this.transactions.push({
+                item: e.name, 
+                price: e.price,
+                quantity: e.quantity,
+                total: e.price * e.quantity
+              })
+            }
+          )
         }
       )
 
+  }
+  getTotalCost() {
+    return this.transactions.map(t => t.total).reduce((acc, value) => acc + value, 0);
   }
 
 }

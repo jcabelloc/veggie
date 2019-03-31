@@ -1,0 +1,16 @@
+.container {
+    max-width: 1200px;
+    min-width: 300px;
+    width: 50%;
+    margin: 5% auto;
+
+  }
+
+table {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  tr.mat-footer-row {
+    font-weight: bold;
+  }
