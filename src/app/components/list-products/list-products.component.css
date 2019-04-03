@@ -6,20 +6,37 @@
     display: table;
   }
 
-  .container {
-    width: 50%;
-    min-width: 800px;
+  .container1 {
+    width: 100%;
+    max-width: 900px;
     margin: 5% auto;
   }
   
-  .example-card {
+  .example-card1 {
     float: left;
-    width: 26%;
-    min-width: 100px;
+    width: 27.5%;
+    min-width: 200px;
     margin: 1%;
 
   }
-  .img-card{
+  .img-card1{
     height: 160px;
   }
   
+  .example-card
+{
+    margin:1px;
+    width: 26%;
+    text-align:left;
+    min-width: 250px;
+    display:inline-block;    
+    margin: 1.5%;
+
+}
+.container
+{
+    text-align:center;
+    width:100%;
+    max-width: 950px;
+    margin: 5% auto;
+}
