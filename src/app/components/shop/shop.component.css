@@ -4,9 +4,18 @@
     background-color: black;
 }
 
+.parallax_img {
+  position: relative;
+  opacity: 0.5;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /*The Hero bg Image container*/
 .hero_img_container{
-    background-image: url('/assets/6.jpg');
+    background-image: url(/assets/6.jpg);
     background-position: 50% 0;
     width: 100%;
     height: inherit;

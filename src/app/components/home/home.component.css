@@ -1,18 +1,271 @@
-/* 3.- Banner Image Section */
-/*-------------------------------------*/
-/* Set the banner on the left corner */
-.banner {
-	position: relative;
-	top: 0; 
-	left: 0;
+/*Hero Img css*/
+.hero_comp{
+    width: 100%;
+    background-color: black;
 }
 
-/*Image banner takes full width from the left corner*/
-.image_banner{
-    margin-top: 4%;
-	width:100%;
-	position: relative;
-	top: 0;
-    left: 0;
-    opacity: 0.7
+.parallax_img {
+  position: relative;
+  opacity: 0.5;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.hero_img{
+    background-image: url("/assets/2.jpg");
+    min-height: 33.06em;
+}
+
+/*The centered clas  to center the hero text overlay*/
+.hero_centered {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.land_hero_txt{
+    opacity: 1;
+    text-align:center;
+    color:white;
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+}
+
+.land_hero_comp_logo{
+    object-position: 35% 50%; 
+    width: 47.19em; 
+    height: 25.625em; 
+    object-fit: cover;
+}
+
+.land_hero_shop_button{
+    border: 2px solid white;
+    min-height: 21px;
+    width: 153px;
+    background-color: transparent;
+    color:white;
+    text-decoration: none;
+    font-size:1em;
+    display: block;
+    margin:auto;
+    white-space: nowrap;
+    position:relative;
+    cursor:pointer;
+    justify-content: center;
+    text-align: initial;
+    display: flex;
+    align-items: center; 
+}
+
+.land_hero_shop_button:hover{
+    background-color: grey;
+}
+
+a.land_hero_shop_button span{
+    text-transform: uppercase;
+    margin:0px;
+    font: normal normal normal 1em/1.4em avenir-lt-w01_35-light1475496,sans-serif;
+    transition: color 0.4s ease 0s;
+    display: inline-block;
+}
+
+/*content sections*/
+.content_center{
+    margin:auto;
+    width:1024px;
+    margin-top: 44px;
+    margin-bottom: 52px;
+}
+
+.tab_component{
+    background-color: white;
+    border:1px solid white;
+}
+
+.change_section_bg{
+    background-color: #D8FBE8; 
+}
+
+.comp_text_section{
+    display: inline;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.content_text{
+    font: normal normal normal 15px/1.4em avenir-lt-w01_35-light1475496,sans-serif;
+}
+
+.heading_text{
+    font-family: arial,dotum,helvetica,sans-serif;
+    text-align: center;
+    display:block;
+    font-size:1.7em;
+    line-height: 2em;
+}
+
+.comp_img_section{
+    padding: 0px 40px;
+    float:left;
+}
+
+.content_img{
+    width: 438px;
+    height: 291px;
+    object-fit: cover;
+    float:left;
+}
+
+/*Qoute Component*/
+
+.qoute_section{
+    background-color: black;
+    width:100%;
+    height:450px;
+    position: relative;
+}
+
+.qoute_img{
+    background-image: url("/assets/1.jpg");
+    min-height: 450px;
+}
+
+.qoute_content{
+    color:white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.qoute_text{
+    font-family:  cinzel,serif;
+    font-size: 2em;
+    display:block;
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+    
+}
+
+.qoute_author{
+    display: block;
+    font-family: normal normal normal 15px/1.4em avenir-lt-w01_35-light1475496,sans-serif;
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+    line-height: 2em;
+    margin: 10px;
+}
+
+/*Contact us*/
+.contact_section{
+    background-color: black;
+    width:100%;
+    height:490px;
+    position: relative;
+    color:white;
+}
+
+.contact_img{
+    background-image: url("/assets/5.jpg");
+    min-height: 490px;
+}
+
+.contact_input{
+    padding-left: 12px;
+    border-radius: 0;
+    font: normal normal normal 15px/1.4em avenir-lt-w01_35-light1475496,sans-serif;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-width: 1px;
+    background-color: transparent;
+    box-sizing: border-box !important;
+    color: #FFFFFF;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.55);
+    padding: 3px;
+    margin: 0;
+    margin-bottom:10px;
+    max-width: 100%;
+    -webkit-flex: 1;
+    flex: 1;
+    text-overflow: ellipsis;
+    Width:100%;
+}
+
+.contact_input::placeholder{
+    color:white;
+}
+
+.contact_input:hover{
+    background:  rgba(0, 0, 0, 0.3);
+}
+
+.contact_input:focus{
+    background:  rgba(0, 0, 0, 0.7);
+}
+
+
+/*Media Queries*/
+
+
+@media only screen and (max-width: 1024px){
+    .content_center{
+        margin:auto;
+        width:90%;
+        padding:5% 0;
+    }
+    
+    .comp_img_section{
+        width: 100%;
+        display:block;
+        float:none;
+        padding:0;
+    }
+    .comp_text_section{
+        display: block;
+        width:100%;
+    }
+    
+    .content_img{
+        width:100%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1023px){
+    /*    Seeting em size */
+    body{
+        font-size:12px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    /*    Setting em size */
+    body{
+        font-size:10px;
+    }
+    .hero_centered{
+        top: 25%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    
+    .land_hero_comp_logo{
+        width: 28em; 
+        height: auto; 
+    }
+    
+}
+
