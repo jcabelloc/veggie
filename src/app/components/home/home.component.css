@@ -244,7 +244,7 @@ a.land_hero_shop_button span{
 
 @media only screen and (min-width: 600px) and (max-width: 1023px){
     /*    Seeting em size */
-    body{
+    .landing_body{
         font-size:12px;
     }
 }
@@ -252,7 +252,7 @@ a.land_hero_shop_button span{
 
 @media only screen and (max-width: 600px) {
     /*    Setting em size */
-    body{
+    .landing_body{
         font-size:10px;
     }
     .hero_centered{
