@@ -26,6 +26,9 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule }   from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 
 
 
@@ -56,6 +59,8 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     MatTableModule,
     MatIconModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   entryComponents: [AddToCartComponent ],
 

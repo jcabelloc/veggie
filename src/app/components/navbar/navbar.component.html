@@ -1,5 +1,10 @@
 <div id="page">
   <div class="topnav">
+    <div class = "menudiv" *ngIf="mobileQuery.matches ? true : false" >
+    <button mat-icon-button class="menu"  (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    </div>
     <img class = "img_logo" src="/assets/cow_logo.png" alt="moomosa" />
     <img class = "img_logo" src="/assets/just_veggie.png" alt="veggie_logo" />
     <div class="topnav-right">
@@ -16,4 +21,43 @@
     </div>
 
   </div>
+  <mat-sidenav-container class="sidenav-container"
+  [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+
+  <mat-sidenav role="navigation" #snav class= "mat-sidenav" 
+    [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+    <div>
+
+    <mat-nav-list >
+
+        <mat-list-item role="listitem">
+          <a routerLink="/home" routerLinkActive="active">HOME</a>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <a routerLink="/shop" routerLinkActive="active">SHOP</a>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <a href="/home#about">ABOUT</a>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <a href="/home#contact">CONTACT</a>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <a routerLink="/cart" routerLinkActive="active">
+            <mat-icon mat-list-icon>shopping_cart</mat-icon>
+          </a>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+          <a routerLink="/home" routerLinkActive="active">
+            <mat-icon mat-list-icon>account_circle</mat-icon>
+          </a>
+        </mat-list-item>
+        
+      
+    </mat-nav-list> 
+  </div>
+
+  </mat-sidenav>
+</mat-sidenav-container>
 </div>
