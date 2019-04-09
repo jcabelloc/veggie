@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
+import { Cart } from 'src/app/models/Cart';
 
 export interface Transaction {
-  item: string;
+  productName: string;
   price: number;
   quantity?: number;
   total?: number;
   imgUrl?: string;
+  idProduct?: string;
 }
 
 
@@ -20,8 +22,9 @@ export class CartComponent implements OnInit {
 
   user: string = 'admin';
 
-  displayedColumns: string[] = ['item', 'price', 'quantity', 'total'];
+  displayedColumns: string[] = ['productName', 'price', 'quantity', 'total', 'delete'];
   transactions: Transaction[];
+  cart: Cart;
 
   constructor(private cartService: CartService,
     private productService: ProductService
@@ -32,14 +35,16 @@ export class CartComponent implements OnInit {
     this.cartService.getCartByUser(this.user)
       .subscribe(
         cart => {
+          this.cart = cart;
           this.transactions = [];
           cart.productsOnCart.forEach(
             e => {
               let line: Transaction = {
-                item: e.name, 
+                productName: e.name, 
                 price: e.price,
                 quantity: e.quantity,
-                total: e.price * e.quantity
+                total: e.price * e.quantity,
+                idProduct: e.id,
               }
               this.productService.getProductImgUrl(e.filename)
                 .subscribe(
@@ -57,6 +62,12 @@ export class CartComponent implements OnInit {
   }
   getTotalCost() {
     return this.transactions.map(t => t.total).reduce((acc, value) => acc + value, 0);
+  }
+
+  delete(idProduct: string){
+    console.log(this.cart.productsOnCart)
+    this.cart.productsOnCart = this.cart.productsOnCart.filter(e =>  e.id != idProduct  );
+    this.cartService.updateCart(this.cart);
   }
 
 }
