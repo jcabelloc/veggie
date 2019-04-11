@@ -1,0 +1,82 @@
+.info_header_container{
+    display:block;
+    width: 100%;
+    font-family:  cinzel,serif;
+    color: #126D9B;
+    font-weight: 500;
+}
+.info_heading{
+    font-size: 2em;
+    display:block;
+    width: 100%;
+    margin: 0.5em;
+}
+
+.info_text{
+    font-size: 1.2em;
+    display:block;
+    width: 100%;
+    margin: 0.8em;
+}
+
+.body_div{
+    width:80%;
+    margin:auto;
+    font-size: 1em;
+    line-height: 1.2em;
+    font: normal normal normal 1em/1.2em avenir-lt-w01_35-light1475496,sans-serif;
+    Color: #757575;
+}
+.form_ele{
+    width: 45%;
+    margin: 0.6em 2.3% 2em 2.3%;
+    display: inline-block;
+    line-height: 23px;
+    
+}
+.form_ele_lbl{
+    width:100%;
+    display: block;
+    margin:0;
+    margin-bottom:0.2em;
+}
+.form_ele_inp{
+    font-size:1em;
+    width:95%;
+    display: block;
+    border:1px solid #9e9e9e;
+}
+
+.form_ele_inp:active{
+ 
+    border:1.5px solid #126D9B;
+}
+
+.form_ele_btn{
+    width:50%;
+    border: 1px solid #126D9B;
+    background-color: #126D9B;
+    line-height: 1.4em;
+    font-size: 1em;
+    margin-left:20%;
+    color:white;
+}
+
+hr{
+    border: 0.4px solid #126D9B;
+}
+/*            Media Queries for Mobile devices */
+@media only screen and (max-width: 768px) {
+    .body_div{
+        width:90%;
+        font-size: 13px;
+    }
+    
+    .form_ele {
+        width: 100%;
+        margin: 0.5em;
+  }
+    .form_ele_inp{
+        width:95%;
+    }
+}

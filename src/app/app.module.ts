@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { UserInfoComponent } from './components/user-info/user-info.component';
 
 
 
@@ -44,6 +45,7 @@ import { MatListModule } from '@angular/material/list';
     ListProductsComponent,
     AddToCartComponent,
     CartComponent,
+    UserInfoComponent,
   ],
   imports: [
     BrowserModule,
