@@ -12,12 +12,14 @@ import { ProductsComponent } from './components/products/products.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 import { CartComponent } from './components/cart/cart.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
+import { LoginComponent } from './components/login/login.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,7 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { UserInfoComponent } from './components/user-info/user-info.component';
+
 
 
 
@@ -46,6 +48,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     AddToCartComponent,
     CartComponent,
     UserInfoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    AngularFireAuthModule,
   ],
   entryComponents: [AddToCartComponent ],
 
