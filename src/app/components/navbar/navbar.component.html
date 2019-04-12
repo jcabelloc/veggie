@@ -12,10 +12,10 @@
       <a routerLink="/shop" routerLinkActive="active">SHOP</a>
       <a href="/home#about">ABOUT</a>
       <a href="/home#contact">CONTACT</a>
-      <a routerLink="/cart" routerLinkActive="active">
+      <a *ngIf="user | async" routerLink="/cart" routerLinkActive="active">
         <mat-icon mat-list-icon>shopping_cart</mat-icon>
       </a>
-      <a routerLink="/home" routerLinkActive="active">
+      <a routerLink="/login" routerLinkActive="active">
         <mat-icon mat-list-icon>account_circle</mat-icon>
       </a>
     </div>
@@ -43,13 +43,13 @@
         <mat-list-item role="listitem">
           <a href="/home#contact">CONTACT</a>
         </mat-list-item>
-        <mat-list-item role="listitem">
+        <mat-list-item *ngIf="user | async"  role="listitem">
           <a routerLink="/cart" routerLinkActive="active">
             <mat-icon mat-list-icon>shopping_cart</mat-icon>
           </a>
         </mat-list-item>
         <mat-list-item role="listitem">
-          <a routerLink="/home" routerLinkActive="active">
+          <a routerLink="/login" routerLinkActive="active">
             <mat-icon mat-list-icon>account_circle</mat-icon>
           </a>
         </mat-list-item>
