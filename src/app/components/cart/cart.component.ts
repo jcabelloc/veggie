@@ -3,6 +3,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Cart } from 'src/app/models/Cart';
 import { AuthService } from 'src/app/services/auth.service';
+import { OrderService } from 'src/app/services/order.service';
 
 export interface Transaction {
   productName: string;
@@ -28,6 +29,7 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService,
     private productService: ProductService,
     private authService: AuthService,
+    private orderService: OrderService,
     ) { }
 
   ngOnInit() {
@@ -71,9 +73,11 @@ export class CartComponent implements OnInit {
   }
 
   delete(idProduct: string){
-    console.log(this.cart.productsOnCart)
     this.cart.productsOnCart = this.cart.productsOnCart.filter(e =>  e.id != idProduct  );
     this.cartService.updateCart(this.cart);
   }
 
+  checkout(){
+    this.orderService.placeOrder(this.cart);
+  }
 }
