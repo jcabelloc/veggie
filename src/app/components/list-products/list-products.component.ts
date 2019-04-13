@@ -4,6 +4,8 @@ import { Product } from 'src/app/models/product';
 
 import { MatDialog } from '@angular/material';
 import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
+import { AuthService } from 'src/app/services/auth.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,11 +15,16 @@ import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
 })
 export class ListProductsComponent implements OnInit {
 
+  user: Observable<firebase.User>;
+
   public products: Product[];
   constructor(private productService: ProductService,
+    private authService: AuthService,
     public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.user = this.authService.getAuth();
+    
     this.productService.getProducts().subscribe(
       products => {
         this.products = products;
