@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Cart } from 'src/app/models/Cart';
+import { AuthService } from 'src/app/services/auth.service';
 
 export interface Transaction {
   productName: string;
@@ -20,44 +21,49 @@ export interface Transaction {
 })
 export class CartComponent implements OnInit {
 
-  user: string = 'admin';
-
   displayedColumns: string[] = ['productName', 'price', 'quantity', 'total', 'delete'];
   transactions: Transaction[];
   cart: Cart;
 
   constructor(private cartService: CartService,
-    private productService: ProductService
+    private productService: ProductService,
+    private authService: AuthService,
     ) { }
 
   ngOnInit() {
-
-    this.cartService.getCartByUser(this.user)
-      .subscribe(
-        cart => {
-          this.cart = cart;
-          this.transactions = [];
-          cart.productsOnCart.forEach(
-            e => {
-              let line: Transaction = {
-                productName: e.name, 
-                price: e.price,
-                quantity: e.quantity,
-                total: e.price * e.quantity,
-                idProduct: e.id,
+    
+    this.authService.getAuth().subscribe(user => {
+      if (user) {
+        this.cartService.getCartByUser(user.uid)
+        .subscribe(
+          cart => {
+            this.cart = cart;
+            this.transactions = [];
+            cart.productsOnCart.forEach(
+              e => {
+                let line: Transaction = {
+                  productName: e.name, 
+                  price: e.price,
+                  quantity: e.quantity,
+                  total: e.price * e.quantity,
+                  idProduct: e.id,
+                }
+                this.productService.getProductImgUrl(e.filename)
+                  .subscribe(
+                    url => {
+                      line.imgUrl = url
+                    }
+                  );
+                
+                this.transactions.push(line);
               }
-              this.productService.getProductImgUrl(e.filename)
-                .subscribe(
-                  url => {
-                    line.imgUrl = url
-                  }
-                );
-              
-              this.transactions.push(line);
-            }
-          )
-        }
-      )
+            )
+          }
+        )
+      }
+    })
+
+
 
   }
   getTotalCost() {

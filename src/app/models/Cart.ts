@@ -5,6 +5,6 @@ export interface ProductOnCart extends Product{
 }
 
 export interface Cart {
-    user: string;
-    productsOnCart: ProductOnCart[];
+    uid: string;
+    productsOnCart?: ProductOnCart[];
 }

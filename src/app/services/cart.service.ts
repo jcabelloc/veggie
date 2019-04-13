@@ -39,14 +39,24 @@ export class CartService {
   */
 
   updateCart(cart: Cart){
-    return this.afs.doc<Cart>('carts/'+cart.user).update(cart);
+    return this.afs.doc<Cart>('carts/'+cart.uid).update(cart);
   }
 
-  getCartByUser(user: string) {
-    return this.afs.collection('carts').doc<Cart>(user)
+  setCart(cart: Cart){
+    return this.afs.doc<Cart>('carts/'+cart.uid).set(cart);
+  }
+
+  createCart(uid: string){
+    let cart: Cart = {uid: uid, productsOnCart: []}
+    return this.afs.doc<Cart>('carts/'+uid).set(cart);
+  }
+
+
+  getCartByUser(uid: string) {
+    return this.afs.collection('carts').doc<Cart>(uid)
       .valueChanges().pipe(
         map(e=> {
-          e.user = user;
+          //e.uid = uid;
           return e;
         })
       );

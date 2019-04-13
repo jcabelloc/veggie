@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor(public afAuth: AngularFireAuth) { }
   user: User = null;
-  /* Decprecated */
+  /* Decprecated 
   getAuth1(){
     return this.afAuth.authState.pipe(
       map( auth => {
@@ -22,6 +22,8 @@ export class AuthService {
       })
     )
   }
+  */
+ 
   getAuth(){
     return this.afAuth.authState;
   }

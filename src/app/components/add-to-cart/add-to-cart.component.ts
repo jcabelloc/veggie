@@ -4,6 +4,8 @@ import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/Product';
 import { CartService } from 'src/app/services/cart.service';
 import { Cart } from 'src/app/models/Cart';
+import { AuthService } from 'src/app/services/auth.service';
+import { unescapeIdentifier } from '@angular/compiler';
 
 
 @Component({
@@ -14,15 +16,27 @@ import { Cart } from 'src/app/models/Cart';
 export class AddToCartComponent implements OnInit {
   product: Product;
   quantity: number;
-  user: string = 'admin';
   cart: Cart;
   constructor(public dialogRef: MatDialogRef<AddToCartComponent>,
     @Inject(MAT_DIALOG_DATA) public idProduct: string,
     private productService: ProductService,
     private cartService: CartService,
+    private authService: AuthService,
     ) { }
 
   ngOnInit() {
+    this.authService.getAuth()
+      .subscribe(
+        user => {
+          if(user) {
+            this.cartService.getCartByUser(user.uid).subscribe(
+              cart => {
+                this.cart = cart;
+              }
+            );
+          }
+        }
+      )
     
     this.productService.getProductById(this.idProduct)
       .subscribe(
@@ -36,11 +50,7 @@ export class AddToCartComponent implements OnInit {
             )
         }
       );
-    this.cartService.getCartByUser(this.user).subscribe(
-      cart => {
-        this.cart = cart;
-      }
-    );
+
     
     }
     onSubmit({value, valid}: {value: any, valid: boolean}) {
