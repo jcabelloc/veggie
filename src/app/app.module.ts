@@ -14,6 +14,7 @@ import { AddToCartComponent } from './components/add-to-cart/add-to-cart.compone
 import { CartComponent } from './components/cart/cart.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -30,6 +31,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select'
+import { MatExpansionModule } from '@angular/material/expansion'
+
+
 
 
 
@@ -49,6 +54,7 @@ import { MatListModule } from '@angular/material/list';
     CartComponent,
     UserInfoComponent,
     LoginComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +73,8 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatListModule,
     AngularFireAuthModule,
+    MatSelectModule,
+    MatExpansionModule,
   ],
   entryComponents: [AddToCartComponent ],
 

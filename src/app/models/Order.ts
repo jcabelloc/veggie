@@ -2,6 +2,7 @@ import { Product } from './Product';
 
 export interface OrderDetail extends Product{
     quantity: number;
+    amount?: number;
 }
 
 export interface Order{
@@ -9,4 +10,5 @@ export interface Order{
     uid: string;
     details: OrderDetail[];
     status: string;
+    amount?: number;
 }

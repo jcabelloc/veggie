@@ -32,4 +32,8 @@ export class OrderService {
 
   }
 
+  getAllOrders(){
+    return this.afs.collection<Order>('orders').valueChanges();
+  }
+
 }
