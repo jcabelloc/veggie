@@ -5,6 +5,8 @@ import { Order } from 'src/app/models/Order';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { O_DIRECT } from 'constants';
+import { User } from 'src/app/models/User';
+import { UserService } from 'src/app/services/user.service';
 
 export interface Option {
   value: string;
@@ -23,9 +25,11 @@ export class AdminComponent implements OnInit {
     {value: 'users', viewValue: 'Users'},
   ]
   displayedColumns: string[] = ['name', 'price', 'quantity', 'total'];
+  strOption: string = "";
 
   orders: Observable<Order[]>;
-  constructor(private orderService: OrderService) { }
+  users: Observable<User[]>;
+  constructor(private orderService: OrderService, private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -50,6 +54,7 @@ export class AdminComponent implements OnInit {
         break;
       }
       case "users": {
+        this.users = this.userService.getAllUsers();
         break;
       }
       default: {

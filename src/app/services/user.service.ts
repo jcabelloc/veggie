@@ -17,4 +17,8 @@ export class UserService {
     return this.afs.doc<User>('users/'+user.uid).set(user);
   }
 
+  getAllUsers(){
+    return this.afs.collection<User>('users').valueChanges();
+  }
+
 }

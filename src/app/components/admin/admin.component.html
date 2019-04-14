@@ -1,16 +1,16 @@
 <div class="container">
   <br>
-  <br>
-  <h4>Select a Collection</h4>
+  <h4 class="collectionTitle">Select a Collection</h4>
   <mat-form-field>
     <mat-label>Collection</mat-label>
-    <mat-select [(ngModel)]="option" name="option" (selectionChange)="onOptionSelection($event)">
+    <mat-select [(ngModel)]="strOption" name="strOption" (selectionChange)="onOptionSelection($event)">
       <mat-option *ngFor="let collection of collections" [value]="collection.value">
         {{collection.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
+  <div *ngIf="strOption=='orders'">
   <mat-accordion *ngIf="orders | async; let orders; else loading">
     <mat-expansion-panel *ngFor="let order of orders">
       <mat-expansion-panel-header>
@@ -57,4 +57,22 @@
       </table>
     </mat-expansion-panel>
   </mat-accordion>
+  </div>
+  <div *ngIf="strOption=='users'"> 
+    <div *ngIf="users | async; let users; else loading" >
+    <mat-card *ngFor="let user of users" class="user-card">
+        <mat-card-header>
+          <mat-card-title>{{user.displayName}}</mat-card-title>
+          <!--<mat-card-subtitle>{{user.email}}</mat-card-subtitle>-->
+        </mat-card-header>
+        <img mat-card-image  class="img-card" [src]="user.photoUrl" alt="user.displayName">
+        <mat-card-content>
+          <p>
+            {{user.email}}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    </div>
+  
 </div>

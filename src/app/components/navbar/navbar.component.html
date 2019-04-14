@@ -12,6 +12,7 @@
       <a routerLink="/shop" routerLinkActive="active">SHOP</a>
       <a href="/home#about">ABOUT</a>
       <a href="/home#contact">CONTACT</a>
+      <a href="/admin">ADMIN</a>
       <a *ngIf="user | async" routerLink="/cart" routerLinkActive="active">
         <mat-icon mat-list-icon>shopping_cart</mat-icon>
       </a>
@@ -40,6 +41,9 @@
         <mat-list-item role="listitem">
           <a href="/home#about">ABOUT</a>
         </mat-list-item>
+        <mat-list-item role="listitem">
+            <a href="/admin">ADMIN</a>
+          </mat-list-item>
         <mat-list-item role="listitem">
           <a href="/home#contact">CONTACT</a>
         </mat-list-item>
