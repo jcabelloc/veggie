@@ -1,14 +1,13 @@
 <br>
 <br>
-<br>
-<br>
-<br>
-
-<div *ngIf="afAuth.user | async as user; else showLogin">
-    <h1>Hello {{ user.displayName }}!</h1>
-    <button (click)="logout()">Logout</button>
+<div class="container">
+  <div *ngIf="afAuth.user | async as user; else showLogin">
+    <h3 class="titleLogin">Hello {{ user.displayName }}!</h3>
+    <button mat-button class="logoutBtn" (click)="logout()">Logout</button>
   </div>
   <ng-template #showLogin>
-    <p>Please login.</p>
-    <button (click)="login()">Login with Google</button>
+    <h3 class="titleLogout">Please login.</h3>
+    <button mat-button class="loginBtn" (click)="login()">Login with Google</button>
   </ng-template>
+
+</div>
