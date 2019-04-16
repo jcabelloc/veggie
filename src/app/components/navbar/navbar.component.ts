@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,
       private authService: AuthService) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this.mobileQuery = media.matchMedia('(max-width: 678px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
    }

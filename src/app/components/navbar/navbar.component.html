@@ -8,15 +8,15 @@
     <img class = "img_logo" src="/assets/cow_logo.png" alt="moomosa" />
     <img class = "img_logo" src="/assets/just_veggie.png" alt="veggie_logo" />
     <div class="topnav-right">
-      <a routerLink="/home" routerLinkActive="active">HOME</a>
-      <a routerLink="/shop" routerLinkActive="active">SHOP</a>
+      <a [routerLink]="['/home']" routerLinkActive="active">HOME</a>
+      <a [routerLink]="['/shop']"routerLinkActive="active">SHOP</a>
       <a href="/home#about">ABOUT</a>
       <a href="/home#contact">CONTACT</a>
-      <a href="/admin">ADMIN</a>
-      <a *ngIf="user | async" routerLink="/cart" routerLinkActive="active">
+      <a [routerLink]="['/admin']">ADMIN</a>
+      <a *ngIf="user | async" [routerLink]="['/cart']"  routerLinkActive="active">
         <mat-icon mat-list-icon>shopping_cart</mat-icon>
       </a>
-      <a routerLink="/login" routerLinkActive="active">
+      <a [routerLink]="['/login']" routerLinkActive="active">
         <mat-icon mat-list-icon>account_circle</mat-icon>
       </a>
     </div>
@@ -27,33 +27,33 @@
 
   <mat-sidenav role="navigation" #snav class= "mat-sidenav" 
     [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [opened]="mobileQuery.matches ? false : true" 
     [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
     <div>
 
     <mat-nav-list >
-
         <mat-list-item role="listitem">
-          <a routerLink="/home" routerLinkActive="active">HOME</a>
+          <a [routerLink]="['/home']" (click)="snav.toggle()" >HOME</a>
         </mat-list-item>
         <mat-list-item role="listitem">
-          <a routerLink="/shop" routerLinkActive="active">SHOP</a>
+          <a [routerLink]="['/shop']" (click)="snav.toggle()">SHOP</a>
         </mat-list-item>
         <mat-list-item role="listitem">
-          <a href="/home#about">ABOUT</a>
+          <a [routerLink]="['/home']" fragment="about" (click)="snav.toggle()"> ABOUT</a>
         </mat-list-item>
         <mat-list-item role="listitem">
-            <a href="/admin">ADMIN</a>
+            <a [routerLink]="['/admin']" (click)="snav.toggle()">ADMIN</a>
           </mat-list-item>
         <mat-list-item role="listitem">
-          <a href="/home#contact">CONTACT</a>
+          <a [routerLink]="['/home']" fragment="contact" (click)="snav.toggle()">CONTACT</a>  
         </mat-list-item>
         <mat-list-item *ngIf="user | async"  role="listitem">
-          <a routerLink="/cart" routerLinkActive="active">
+          <a [routerLink]="['/cart']" (click)="snav.toggle()">
             <mat-icon mat-list-icon>shopping_cart</mat-icon>
           </a>
         </mat-list-item>
         <mat-list-item role="listitem">
-          <a routerLink="/login" routerLinkActive="active">
+          <a [routerLink]="['/login']" (click)="snav.toggle()">
             <mat-icon mat-list-icon>account_circle</mat-icon>
           </a>
         </mat-list-item>
