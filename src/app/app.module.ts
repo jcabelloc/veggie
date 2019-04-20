@@ -8,7 +8,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShopComponent } from './components/shop/shop.component';
-import { ProductsComponent } from './components/products/products.component';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { AddToCartComponent } from './components/add-to-cart/add-to-cart.component';
 import { CartComponent } from './components/cart/cart.component';
@@ -48,7 +47,6 @@ import { MatExpansionModule } from '@angular/material/expansion'
     FooterComponent,
     HomeComponent,
     ShopComponent,
-    ProductsComponent,
     ListProductsComponent,
     AddToCartComponent,
     CartComponent,
