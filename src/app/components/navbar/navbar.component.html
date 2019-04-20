@@ -5,8 +5,12 @@
       <mat-icon>menu</mat-icon>
     </button>
     </div>
-    <img class = "img_logo" src="/assets/cow_logo.png" alt="moomosa" />
-    <img class = "img_logo" src="/assets/just_veggie.png" alt="veggie_logo" />
+    <a [routerLink]="['/home']" id="a_img_logo">
+      <img class = "img_logo" src="/assets/cow_logo.png" alt="moomosa" />
+    </a>
+    <a [routerLink]="['/home']" id="a_img_logo">
+      <img class = "img_logo" src="/assets/just_veggie.png" alt="veggie_logo" />
+    </a>
     <div class="topnav-right">
       <a [routerLink]="['/home']" routerLinkActive="active">HOME</a>
       <a [routerLink]="['/shop']"routerLinkActive="active">SHOP</a>

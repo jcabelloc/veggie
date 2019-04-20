@@ -42,6 +42,11 @@
 .img_logo {
 	height: 100%;
 }
+#a_img_logo {
+  height: 100%;
+  padding: 0% 0%;
+
+}
 
 .menu {
 	color: #D8FBE8;
