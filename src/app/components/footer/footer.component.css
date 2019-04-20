@@ -2,23 +2,12 @@
 footer{
     background-color: #126D9B;
     font: normal 100% Sans-Serif;
-    padding: 3% 0%;
+    padding: 1% 0%;
 
 }
 
-#footer_list{
+.footer_text{
     text-align: center;
     color: #D8FBE8;
 
-}
-
-.footer_link{
-    color: #D8FBE8;
-    padding: 32px;
-
-}
-
-#links{
-    display: flex;
-    justify-content: center;
 }
