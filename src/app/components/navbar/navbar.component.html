@@ -39,13 +39,13 @@
           <a [routerLink]="['/shop']" (click)="snav.toggle()">SHOP</a>
         </mat-list-item>
         <mat-list-item role="listitem">
-          <a [routerLink]="['/home']" fragment="about" (click)="snav.toggle()"> ABOUT</a>
+          <a href="/home#about" (click)="snav.toggle()"> ABOUT</a>
         </mat-list-item>
         <mat-list-item role="listitem">
-            <a [routerLink]="['/admin']" (click)="snav.toggle()">ADMIN</a>
-          </mat-list-item>
+          <a href="/home#contact" (click)="snav.toggle()">CONTACT</a>
+        </mat-list-item>
         <mat-list-item role="listitem">
-          <a [routerLink]="['/home']" fragment="contact" (click)="snav.toggle()">CONTACT</a>  
+          <a [routerLink]="['/admin']" (click)="snav.toggle()">ADMIN</a>
         </mat-list-item>
         <mat-list-item *ngIf="user | async"  role="listitem">
           <a [routerLink]="['/cart']" (click)="snav.toggle()">
