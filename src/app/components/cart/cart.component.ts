@@ -4,6 +4,8 @@ import { ProductService } from 'src/app/services/product.service';
 import { Cart } from 'src/app/models/Cart';
 import { AuthService } from 'src/app/services/auth.service';
 import { OrderService } from 'src/app/services/order.service';
+import {MatSnackBar} from '@angular/material';
+
 
 export interface Transaction {
   productName: string;
@@ -30,6 +32,7 @@ export class CartComponent implements OnInit {
     private productService: ProductService,
     private authService: AuthService,
     private orderService: OrderService,
+    private snackBar: MatSnackBar
     ) { }
 
   ngOnInit() {
@@ -79,5 +82,8 @@ export class CartComponent implements OnInit {
 
   checkout(){
     this.orderService.placeOrder(this.cart);
+    this.snackBar.open('Order placed', 'Thank you!', {
+      duration: 3000,
+    });
   }
 }
