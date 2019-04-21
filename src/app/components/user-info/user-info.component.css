@@ -1,3 +1,5 @@
+/* USER INFORMATION PAGE STYLING */
+/* header container styling */
 .info_header_container{
     display:block;
     width: 100%;
@@ -5,20 +7,21 @@
     color: #126D9B;
     font-weight: 500;
 }
+/* heading text styling */
 .info_heading{
     font-size: 2em;
     display:block;
     width: 100%;
     margin: 0.5em;
 }
-
+/* the regular text styling on the page */
 .info_text{
     font-size: 1.2em;
     display:block;
     width: 100%;
     margin: 0.8em;
 }
-
+/* Body div to set BODY tag styling in angular */
 .body_div{
     width:80%;
     margin:auto;
@@ -27,6 +30,7 @@
     font: normal normal normal 1em/1.2em avenir-lt-w01_35-light1475496,sans-serif;
     Color: #757575;
 }
+/* styling for each of the web form styling */
 .form_ele{
     width: 45%;
     margin: 0.6em 2.3% 2em 2.3%;
@@ -34,24 +38,26 @@
     line-height: 23px;
     
 }
+/* Form element label styling */
 .form_ele_lbl{
     width:100%;
     display: block;
     margin:0;
     margin-bottom:0.2em;
 }
+/* Form element input field styling */
 .form_ele_inp{
     font-size:1em;
     width:95%;
     display: block;
     border:1px solid #9e9e9e;
 }
-
+/* Form element input field active styling */
 .form_ele_inp:active{
- 
     border:1.5px solid #126D9B;
 }
 
+/* Web form submit button styling */
 .form_ele_btn{
     width:50%;
     border: 1px solid #126D9B;
@@ -61,21 +67,24 @@
     margin-left:20%;
     color:white;
 }
-
+/* Horizontal line styling */
 hr{
     border: 0.4px solid #126D9B;
 }
 /*            Media Queries for Mobile devices */
 @media only screen and (max-width: 768px) {
+    /* Setting the em size and complete form width so 
+    that in dos not merge with mobile screen edges */
     .body_div{
         width:90%;
         font-size: 13px;
     }
-    
+    /* Setting each form element's styling on mobile device */
     .form_ele {
         width: 100%;
         margin: 0.5em;
-  }
+    }
+    /* Setting each form elements input fields styling for the mobile devices */
     .form_ele_inp{
         width:95%;
     }
