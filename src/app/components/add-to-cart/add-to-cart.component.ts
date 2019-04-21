@@ -5,7 +5,7 @@ import { Product } from 'src/app/models/Product';
 import { CartService } from 'src/app/services/cart.service';
 import { Cart } from 'src/app/models/Cart';
 import { AuthService } from 'src/app/services/auth.service';
-import { unescapeIdentifier } from '@angular/compiler';
+import {MatSnackBar} from '@angular/material';
 
 
 @Component({
@@ -22,6 +22,7 @@ export class AddToCartComponent implements OnInit {
     private productService: ProductService,
     private cartService: CartService,
     private authService: AuthService,
+    private snackBar: MatSnackBar
     ) { }
 
   ngOnInit() {
@@ -54,6 +55,13 @@ export class AddToCartComponent implements OnInit {
     
     }
     onSubmit({value, valid}: {value: any, valid: boolean}) {
+      if (this.quantity < 1) {
+        this.snackBar.open('Invalid quantity', 'Try again!', {
+          duration: 2000,
+        });
+        this.quantity = null;
+        return;
+      }
       let isOnCart: boolean = false;
       // Obtain the current quantity of this product on car
       this.cart.productsOnCart.map(e => {
