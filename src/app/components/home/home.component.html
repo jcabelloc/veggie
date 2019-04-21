@@ -1,8 +1,11 @@
 <div class="landing_body">
     <!--        Hero Image-->
     <div class="hero_comp">
+        <!-- Hero Image component -->
         <div class= "parallax_img hero_img"></div>
+        <!-- Parallax Image div with the hero img specifying the backgrounf image -->
             <div class="land_hero_txt hero_centered"><!-- Text Div-->
+                <!-- Hero image text containing the logo and shop now button -->
                 <img class="land_hero_comp_logo" src="/assets/transparent_complete_logo.png">
                 <a [routerLink]="['/shop']" class="land_hero_shop_button" role="button"><span>Shop Now</span></a>
             </div>
@@ -10,15 +13,20 @@
     <!--        Sections start here-->
     <!--        About us-->
         <div id="about" class="tab_component">
+            <!-- One of the sections containing About Us contents -->
             <div class="content_center clearfix">
+                <!-- Content is centered with auto margins -->
                 <div class="comp_img_section clearfix">
+                    <!-- clearfix class is applied to ensure image stays in the div -->
                     <img class="content_img" src="/assets/business01.jpg"/>
                 </div>
                 <div class="comp_text_section">
+                    <!-- Section headings -->
                 <span class="heading_text"><u>About</u></span>
                 <span class="heading_text">Veggie.com</span>
                     
                 <span class="content_text">
+                    <!-- Section texts -->
                         <em>
                             "Veggie is a unique online marketplace that enables farmers to sell directly to customers without the intervention of middlemen".
                         </em>
@@ -33,23 +41,32 @@
         </div>
     <!--        Qoute Parralax-->
         <div class="qoute_section">
+            <!-- A qoute section with parallax img background -->
             <div class="parallax_img qoute_img"></div>
+            <!-- qoute_img class specifies the backgorund image -->
             <div class="qoute_content centered">
+                <!-- Text for the qoute section -->
                 <div class="qoute_text">“The fruit of your own hard work is the sweetest.”</div>
                 <div class="qoute_author">- Deepika Padukone -</div>
             </div>
         </div>
         <!--        Our Farmers-->
         <div class="tab_component change_section_bg">
+            <!-- change_section_bg class applied  -->
             <div class="content_center clearfix">
+                <!-- Content is centered with auto margins -->
                 <div class="comp_img_section clearfix" style="float:right;">
+                    <!-- clearfix class is applied to ensure image stays in the div -->
+                    <!-- Inline styling for image to float right to create a contrast with rest of the sections-->
                     <img class="content_img" src="/assets/farmer01.jpg"/>
                 </div>
                 <div class="comp_text_section">
+                    <!-- Section Headings -->
                 <span class="heading_text"><u>Our Farmers</u></span>
                 <span class="heading_text">Neha, joined us 2015</span>
                     
                 <span class="content_text">
+                    <!-- Section texts -->
                         <em>
                             "A farmer is a magician who produces money from the mud".
                         </em>
@@ -65,14 +82,18 @@
     <!--        Our Customers-->
         <div class="tab_component">
             <div class="content_center clearfix">
+                <!-- Content is centered with auto margins -->
                 <div class="comp_img_section clearfix">
+                    <!-- clearfix class is applied to ensure image stays in the div -->
                     <img class="content_img" src="/assets/consumer01.jpg"/>
                 </div>
                 <div class="comp_text_section">
+                    <!-- Section headings -->
                 <span class="heading_text"><u>OUR CONSUMERS</u></span>
                 <span class="heading_text">Anika, joined in 2016</span>
                     
                 <span class="content_text">
+                    <!-- Section text -->
                         <em>
                             "In today's day, it is very difficult to find farm fresh vegetables. Supermarkets do sell organic produce but what is the guarantee that they actually are fresh?".
                         </em>
@@ -87,13 +108,19 @@
         </div>
     <!--        Contact Form-->
         <div id="contact" class="contact_section">
+            <!-- Contact section -->
             <div class="parallax_img contact_img"></div>
+            <!-- parallax effect on the image background -->
+            <!-- contact_img class applied the background image -->
             <div class="contact_content centered">
+                <!-- Contact section texts and web form -->
                 <div class="qoute_text">Contact</div>
                 <div class="qoute_text">--------------------</div>
                 <div class="qoute_author">TEL: 123-456-7890 / INFO@MY-DOMAIN.COM <br> 500 TERRY FRANCOIS ST. SAN FRANCISCO, CA 94158 <br> OPENING HOURS 8:00AM-9:00PM<br></div>
                 <div>
                     <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+                    <form>
+                        <!-- The webform with input fields for Name, Email, Subject and Message followed by a submit button-->
                         <div class="grid_wrapper" data-mesh-internal="true">
                             <div>
                                 <input type='text' placeholder="Name" class="contact_input" 

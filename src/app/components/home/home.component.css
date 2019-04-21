@@ -1,9 +1,12 @@
 /*Hero Img css*/
+/* CSS for the hero img */
 .hero_comp{
     width: 100%;
-    background-color: black;
+    /* backgroud color black added for the 
+    effect of transperancy with black tint */
+    background-color: black; 
 }
-
+/* CSS to have the parallax image effect */
 .parallax_img {
   position: relative;
   opacity: 0.5;
@@ -12,20 +15,20 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+/* The class to add backgrounf image to Hero Image*/
 .hero_img{
     background-image: url("/assets/2.jpg");
     min-height: 33.06em;
 }
 
-/*The centered clas  to center the hero text overlay*/
+/*The centered class  to center the hero text overlay*/
 .hero_centered {
   position: absolute;
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+/* Class for the hero image text */
 .land_hero_txt{
     opacity: 1;
     text-align:center;
@@ -34,14 +37,14 @@
     height: auto;
     margin-left: auto;
 }
-
+/* class for the hero image logo */
 .land_hero_comp_logo{
     object-position: 35% 50%; 
     width: 47.19em; 
     height: 25.625em; 
     object-fit: cover;
 }
-
+/* class for hero image button */
 .land_hero_shop_button{
     border: 2px solid white;
     min-height: 21px;
@@ -60,11 +63,11 @@
     display: flex;
     align-items: center; 
 }
-
+/* psuedo class for the hero image button to change color over hover */
 .land_hero_shop_button:hover{
     background-color: grey;
 }
-
+/* Class for the text of the button on hero image */
 a.land_hero_shop_button span{
     text-transform: uppercase;
     margin:0px;
@@ -74,6 +77,8 @@ a.land_hero_shop_button span{
 }
 
 /*content sections*/
+
+/* To center all the content sections */
 .content_center{
     margin:auto;
     width:1024px;
@@ -81,27 +86,33 @@ a.land_hero_shop_button span{
     margin-bottom: 52px;
 }
 
+/* The repetitive section format styling */
 .tab_component{
     background-color: white;
     border:1px solid white;
 }
 
+/* Changes the background color of a section */
 .change_section_bg{
     background-color: #D8FBE8; 
 }
 
+/* to style text in the repetitive sections */
 .comp_text_section{
     display: inline;
 }
 
+/* clearfix class to fix the image overflow 
+issue when image is inside the div */
 .clearfix {
   overflow: auto;
 }
-
+/* class to set the font of the text in the content sections */
 .content_text{
     font: normal normal normal 15px/1.4em avenir-lt-w01_35-light1475496,sans-serif;
 }
-
+/* class to set styling of the 
+heading text in the content sections */
 .heading_text{
     font-family: arial,dotum,helvetica,sans-serif;
     text-align: center;
@@ -109,12 +120,14 @@ a.land_hero_shop_button span{
     font-size:1.7em;
     line-height: 2em;
 }
-
+/* class to set styling content sections 
+with images*/
 .comp_img_section{
     padding: 0px 40px;
     float:left;
 }
 
+/* Class for the images in content section */
 .content_img{
     width: 438px;
     height: 291px;
@@ -123,30 +136,37 @@ a.land_hero_shop_button span{
 }
 
 /*Qoute Component*/
-
+/* Class to style the qoute section containg 
+the text and the parallax image */
 .qoute_section{
+    /* backgroud color black added for the 
+    effect of transperancy with black tint */
     background-color: black;
     width:100%;
+    /* Static height provided to ensure the parallax effect 
+    functions effectively over all ranges of screens */
     height:450px;
     position: relative;
 }
-
+/* Class provides background image to the qoute section */
 .qoute_img{
     background-image: url("/assets/1.jpg");
+    /* Static height provided to ensure the parallax effect 
+    functions effectively over all ranges of screens */
     min-height: 450px;
 }
-
+/* Sets the font color for the qoute section */
 .qoute_content{
     color:white;
 }
-
+/* Centers the content */
 .centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+/* Styles the qoute text */
 .qoute_text{
     font-family:  cinzel,serif;
     font-size: 2em;
@@ -156,7 +176,7 @@ a.land_hero_shop_button span{
     margin: 10px;
     
 }
-
+/* Styles the author text of the qoute section */
 .qoute_author{
     display: block;
     font-family: normal normal normal 15px/1.4em avenir-lt-w01_35-light1475496,sans-serif;
@@ -168,19 +188,24 @@ a.land_hero_shop_button span{
 }
 
 /*Contact us*/
+/* Contact section containing the parallax image */
 .contact_section{
     background-color: black;
     width:100%;
+    /* Static height provided to ensure the parallax effect 
+    functions effectively over all ranges of screens */
     height:490px;
     position: relative;
     color:white;
 }
-
+/* Sets the backgroud image for the contact section */
 .contact_img{
     background-image: url("/assets/5.jpg");
+    /* Static height provided to ensure the parallax effect 
+    functions effectively over all ranges of screens */
     min-height: 490px;
 }
-
+/* Styling for the contact web form */
 .contact_input{
     padding-left: 12px;
     border-radius: 0;
@@ -202,46 +227,49 @@ a.land_hero_shop_button span{
     text-overflow: ellipsis;
     Width:100%;
 }
-
+/* Styling for the placeholder text in contact form */
 .contact_input::placeholder{
     color:white;
 }
-
+/* Styling for the hover effect in contact form */
 .contact_input:hover{
     background:  rgba(0, 0, 0, 0.3);
 }
-
+/* Styling for the focus in contact form */
 .contact_input:focus{
     background:  rgba(0, 0, 0, 0.7);
 }
 
 
 /*Media Queries*/
+/* These styling elements are added to cater to the mobile devices */
 
-
+/* Styling when the screen size is smaller than 1024px */
 @media only screen and (max-width: 1024px){
+    /* Setting styling for all the centered sections */
     .content_center{
         margin:auto;
         width:90%;
         padding:5% 0;
     }
-    
+    /* setting styling for content section components */
     .comp_img_section{
         width: 100%;
         display:block;
         float:none;
         padding:0;
     }
+    /* Setting styling for text in content sections */
     .comp_text_section{
         display: block;
         width:100%;
     }
-    
+    /* Styling the images in the content sections */
     .content_img{
         width:100%;
     }
 }
-
+/* Styling for Landing page when screen size is between  600px and 1023px */
 @media only screen and (min-width: 600px) and (max-width: 1023px){
     /*    Seeting em size */
     .landing_body{
@@ -255,13 +283,14 @@ a.land_hero_shop_button span{
     .landing_body{
         font-size:10px;
     }
+    /* Setting the position for the hero image logo */
     .hero_centered{
         top: 25%;
     }
 }
-
+/* Setting the styles for screen size less than 480px */
 @media only screen and (max-width: 480px) {
-    
+    /* Setting the styling for Hero Image logo */
     .land_hero_comp_logo{
         width: 28em; 
         height: auto; 

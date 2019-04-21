@@ -1,9 +1,12 @@
 /*The Hero component container*/
 .hero_comp{
     width: 100%;
+    /* backgroud color black added for the 
+    effect of transperancy with black tint */
     background-color: black;
 }
 
+/* CSS to have the parallax image effect */
 .parallax_img {
   position: relative;
   opacity: 0.5;
@@ -13,7 +16,7 @@
   background-size: cover;
 }
 
-/*The Hero bg Image container*/
+/*The Hero background Image container*/
 .hero_img_container{
     background-image: url(/assets/6.jpg);
     background-position: 50% 0;
@@ -106,6 +109,7 @@
         height: 310px !important;
         min-width: 320px;
     }
+    /* Setting the Hero image text position */
     .centered {
         top:30%;
     }
