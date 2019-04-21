@@ -10,6 +10,8 @@
 table {
     width: 100%;
     max-width: 100%;
+    font-family: avenir-lt-w01_35-light1475496,sans-serif;
+
   }
   
   tr.mat-footer-row {
@@ -19,12 +21,11 @@ table {
 
   .example-card {
     max-width: 400px;
-    /*float: left; */
     width: 100%;
-    /* min-width: 300px; */
-    /* padding: 50px; */
     margin: 5%;
     width: 80px;
+    font-family: avenir-lt-w01_35-light1475496,sans-serif;
+
   }
   
   .deletebutton{

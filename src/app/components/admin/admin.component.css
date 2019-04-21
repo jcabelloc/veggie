@@ -10,6 +10,8 @@
   table {
     width: 100%;
     max-width: 100%;
+    font-family: avenir-lt-w01_35-light1475496,sans-serif;
+
   }
   
   tr.mat-footer-row {
@@ -23,9 +25,14 @@
       min-width: 150px;
       display:inline-block;    
       margin: 1%;
-  
+      font-family: avenir-lt-w01_35-light1475496,sans-serif;
+
   }
   .collectionTitle{
     color: #126D9B; 
+    font-family: arial,dotum,helvetica,sans-serif;
 
+  }
+  mat-expansion-panel, mat-expansion-panel-header{
+    font-family: avenir-lt-w01_35-light1475496,sans-serif;
   }

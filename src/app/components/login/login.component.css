@@ -2,9 +2,7 @@
     max-width: 900px;
     margin: 5% auto;
     text-align: center;
-
     padding: 0% 2%;
-
 
   }
 
@@ -16,5 +14,5 @@
 
   .titleLogin, .titleLogout{
     color: #126D9B;
-
+    font-family: arial,dotum,helvetica,sans-serif;
   }
