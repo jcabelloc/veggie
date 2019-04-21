@@ -24,7 +24,6 @@ export class OrderService {
     this.afs.collection<Order>('orders').add(order).then(
       docRef => {
         //Create a new Empty Cart
-        console.log(docRef)
         this.cartService.createCart(cart.uid);
 
       }

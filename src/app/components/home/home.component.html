@@ -93,22 +93,26 @@
                 <div class="qoute_text">--------------------</div>
                 <div class="qoute_author">TEL: 123-456-7890 / INFO@MY-DOMAIN.COM <br> 500 TERRY FRANCOIS ST. SAN FRANCISCO, CA 94158 <br> OPENING HOURS 8:00AM-9:00PM<br></div>
                 <div>
-                    <form>
+                    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
                         <div class="grid_wrapper" data-mesh-internal="true">
                             <div>
-                                <input type=text placeholder="Name" class="contact_input" max-length="100">
+                                <input type='text' placeholder="Name" class="contact_input" 
+                                minlength="3" max-length="100" required [(ngModel)]="contact.name" name="name">
                             </div>
                             <div>
-                                <input type=email placeholder="Email" class="contact_input" max-length="100">
+                                <input type='email' placeholder="Email" class="contact_input" 
+                                minlength="3" max-length="100" required [(ngModel)]="contact.email" name="email">
                             </div>
                             <div>
-                                <input type=text placeholder="Subject" class="contact_input" max-length="100">
+                                <input type='text' placeholder="Subject" class="contact_input" 
+                                minlength="3" max-length="100" required [(ngModel)]="contact.subject" name="subject">
                             </div>
                             <div>
-                                <textarea placeholder="Message" class="contact_input" style="height:75px;"></textarea>
+                                <textarea placeholder="Message" class="contact_input" minlength="3" 
+                                style="height:75px;" required [(ngModel)]="contact.message" name="message"></textarea>
                             </div>
                             <div>
-                                <button role="button" class="contact_input">Submit</button>
+                                <button type = "submit" class="contact_input">Submit</button>
                             </div>
                         </div>
                     </form>
