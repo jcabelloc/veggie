@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
             email: userCred.user.email,
             displayName: userCred.user.displayName
           }
-          // this.userService.updateUser(this.user);
           this.userService.setUser(this.user);
           this.cartService.getCartByUser(this.user.uid).subscribe(cart=> {
             if (!cart) this.cartService.createCart(this.user.uid);

@@ -18,7 +18,6 @@ export class ProductService {
   }
 
   getProducts(){
-    //this.products = this.productsCollection.valueChanges();
     this.products = this.productsCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Product;

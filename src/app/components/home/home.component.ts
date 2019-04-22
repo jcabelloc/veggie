@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
       });
       return;
     }
+    
     this.contactService.createContact(this.contact).then(
       docRef => {
         this.contact = {
@@ -45,4 +46,5 @@ export class HomeComponent implements OnInit {
     });
 
   }
+  
 }

@@ -13,9 +13,7 @@ export class OrderService {
 
 
   placeOrder(cart: Cart){
-    // Create an order
-    // return this.afs.doc<Cart>('carts/'+uid).set(cart);
-    //this.afs.doc<Order>('orders/'+)
+
     let order = {
       uid: cart.uid,
       status: 'placed',
