@@ -1,12 +1,12 @@
-
+<!-- Div to control the elements inside this component -->
 <div class="container">
-
+  <!-- Table to show product on the cart-->
   <table *ngIf="transactions != null" mat-table [dataSource]="transactions" class="mat-elevation-z8">
   <!-- Product Column -->
   <ng-container matColumnDef="productName">
     <th mat-header-cell *matHeaderCellDef> <h1>My Cart </h1> </th>
     <td mat-cell *matCellDef="let transaction"> 
-      <mat-card class="example-card">
+      <mat-card class="product-card">
         <mat-card-header>
           <mat-card-title>{{transaction.productName}}</mat-card-title>
         </mat-card-header>
@@ -54,6 +54,7 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
 </table>
+<!-- Div to control the check out button -->
 <div class="checkoutdiv">
   <button mat-button class="checkout" (click)="checkout()" >Checkout</button>
 </div>

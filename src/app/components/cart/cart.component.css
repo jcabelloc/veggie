@@ -1,3 +1,4 @@
+/* CSS to have the container centering all elements */
 .container {
     max-width: 900px;
     width: 100%;
@@ -7,37 +8,43 @@
 
   }
 
+/* CSS to show the products-on-cart table with our selected typography */
 table {
     width: 100%;
     max-width: 100%;
     font-family: avenir-lt-w01_35-light1475496,sans-serif;
 
   }
-  
-  tr.mat-footer-row {
-    font-weight: bold;
-  }
 
+/* CSS to provide style to the table's footer */
+tr.mat-footer-row {
+  font-weight: bold;
+}
 
-  .example-card {
-    max-width: 400px;
-    width: 100%;
-    margin: 5%;
-    width: 80px;
-    font-family: avenir-lt-w01_35-light1475496,sans-serif;
+/* CSS to provide style to each product view*/
+.product-card {
+  max-width: 400px;
+  width: 100%;
+  margin: 5%;
+  width: 80px;
+  font-family: avenir-lt-w01_35-light1475496,sans-serif;
 
-  }
-  
-  .deletebutton{
-    color: #126D9B;
-  }
+}
 
-  .checkout{
-    margin-top: 2%;
-    color: #D8FBE8;
-    background-color: #126D9B;
-    float: right;
-  }
-  .checkoutdiv{
-    overflow:hidden
-  }
+/* CSS to define style in accordance with our palette colors*/
+.deletebutton{
+  color: #126D9B;
+}
+
+/* CSS to define style in accordance with our palette colors*/
+.checkout{
+  margin-top: 2%;
+  color: #D8FBE8;
+  background-color: #126D9B;
+  float: right;
+}
+
+/* CSS that allows the checkout button to move to the right*/
+.checkoutdiv{
+  overflow:hidden
+}

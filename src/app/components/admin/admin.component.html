@@ -1,5 +1,7 @@
+<!-- Div to control the elements inside this component -->
 <div class="container">
   <br>
+  <!-- Title on Admin page -->
   <h4 class="collectionTitle">Select a Collection</h4>
   <mat-form-field>
     <mat-label>Collection</mat-label>
@@ -10,6 +12,7 @@
     </mat-select>
   </mat-form-field>
 
+  <!-- Div to show the order table, noticed that it is conditionally visible-->
   <div *ngIf="strOption=='orders'">
   <mat-accordion *ngIf="orders | async; let orders; else loading">
     <mat-expansion-panel *ngFor="let order of orders">
@@ -21,7 +24,7 @@
           Amount: {{ order.amount | currency}}
         </mat-panel-description>
       </mat-expansion-panel-header>
-  
+      <!-- Table to show details of every order-->
       <table  mat-table [dataSource]="order.details" class="mat-elevation-z8">
         <!-- Name Column -->
         <ng-container matColumnDef="name">
@@ -58,13 +61,14 @@
     </mat-expansion-panel>
   </mat-accordion>
   </div>
+  <!-- Div to show the user table, noticed that it is conditionally visible-->
   <div *ngIf="strOption=='users'"> 
     <div *ngIf="users | async; let users; else loading" >
     <mat-card *ngFor="let user of users" class="user-card">
         <mat-card-header>
           <mat-card-title>{{user.displayName}}</mat-card-title>
-          <!--<mat-card-subtitle>{{user.email}}</mat-card-subtitle>-->
         </mat-card-header>
+        <!-- Image of the user registered on our web site-->
         <img mat-card-image  class="img-card" [src]="user.photoUrl" alt="user.displayName">
         <mat-card-content>
           <p>

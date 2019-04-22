@@ -1,18 +1,20 @@
+/* CSS to have the container centering all elements */
 .container {
     max-width: 900px;
     margin: 5% auto;
     text-align: center;
     padding: 0% 2%;
-
   }
 
-  .logoutBtn, .loginBtn{
-    margin-top: 2%;
-    color: #D8FBE8;
-    background-color: #126D9B;
-  }
+  /* CSS to provide style according to palette colors */
+.logoutBtn, .loginBtn{
+  margin-top: 2%;
+  color: #D8FBE8;
+  background-color: #126D9B;
+}
 
-  .titleLogin, .titleLogout{
-    color: #126D9B;
-    font-family: arial,dotum,helvetica,sans-serif;
-  }
+/* CSS to provide style according to palette colors and typography*/
+.titleLogin, .titleLogout{
+  color: #126D9B;
+  font-family: arial,dotum,helvetica,sans-serif;
+}

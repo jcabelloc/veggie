@@ -1,10 +1,12 @@
-<div id="page">
-  <div class="topnav">
+<!-- Div to control the top navigation bar -->
+<div class="topnav">
+    <!-- Div to control response to mobile screen sizes -->
     <div class = "menudiv" *ngIf="mobileQuery.matches ? true : false" >
-    <button mat-icon-button class="menu"  (click)="snav.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
+      <button mat-icon-button class="menu"  (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
     </div>
+    <!-- section of anchor elements acting as nativation menus -->
     <a [routerLink]="['/home']" id="a_img_logo">
       <img class = "img_logo" src="/assets/cow_logo.png" alt="moomosa" />
     </a>
@@ -26,16 +28,18 @@
     </div>
 
   </div>
+  <!-- Section to control the side navigation for mobile views -->
   <mat-sidenav-container class="sidenav-container"
   [style.marginTop.px]="mobileQuery.matches ? 56 : 56">
-
+  
+  <!-- Section to control response of side navigation for mobile views -->
   <mat-sidenav role="navigation" #snav class= "mat-sidenav" 
     [mode]="mobileQuery.matches ? 'over' : 'side'"
     [opened]="mobileQuery.matches ? false : true" 
     [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
     <div>
-
-    <mat-nav-list >
+     <!-- section of anchor elements acting as nativation menus -->
+     <mat-nav-list >
         <mat-list-item role="listitem">
           <a [routerLink]="['/home']" (click)="snav.toggle()" >HOME</a>
         </mat-list-item>
@@ -68,4 +72,3 @@
 
   </mat-sidenav>
 </mat-sidenav-container>
-</div>

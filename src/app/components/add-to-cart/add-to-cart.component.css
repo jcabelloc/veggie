@@ -1,17 +1,12 @@
-
-  .example-header-image {
-    background-image: url('/assets/cow_logo.png');
-    background-size: cover;
-  }
-
+/* CSS to have the container centering all elements */
   .container::after {
     content: "";
     clear: both;
     display: table;
     margin: 0 auto;
   }
-
-  .example-card {
+/* CSS to show nicely all elements inside the product card */
+  .product-card {
     max-width: 400px;
     float: left;
     margin-left: 1%;

@@ -1,13 +1,16 @@
+<!-- Div to to control the list of products -->
 <div class="container">
-  <mat-card *ngFor="let product of products" class="example-card">
+  <!-- Card Element for each product on the list -->
+  <mat-card *ngFor="let product of products" class="product-card">
+    <!-- Product name and Price for each product of the list -->
     <mat-card-header>
       <mat-card-title>{{product.name}}</mat-card-title>
       <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
     </mat-card-header>
+    <!-- Product Image for each product of the list -->
     <img mat-card-image  class="img-card" [src]="product.url" alt="product.filename">
     <mat-card-content>
       <p>
-        
       </p>
     </mat-card-content>
     <mat-card-actions *ngIf="user | async">

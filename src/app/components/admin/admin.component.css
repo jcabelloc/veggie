@@ -1,38 +1,41 @@
+/* CSS to have the container centering all elements */
 .container {
     max-width: 900px;
     width: 100%;
     margin: 2% auto;
     margin-top: 8%;
     padding: 0% 2%;
+}
 
+/* CSS to show the order table with our selected typography */
+table {
+  width: 100%;
+  max-width: 100%;
+  font-family: avenir-lt-w01_35-light1475496,sans-serif;
 
-  }
-  table {
-    width: 100%;
-    max-width: 100%;
+}
+/* CSS to provide style to the table's footer */
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+/* CSS to show the user card with our selected typography */
+.user-card
+{
+    width: 12%;
+    text-align:left;
+    min-width: 150px;
+    display:inline-block;    
+    margin: 1%;
     font-family: avenir-lt-w01_35-light1475496,sans-serif;
 
-  }
-  
-  tr.mat-footer-row {
-    font-weight: bold;
-  }
+}
+/* CSS to provide style to the title with our selected typography */
+.collectionTitle{
+  color: #126D9B; 
+  font-family: arial,dotum,helvetica,sans-serif;
 
-  .user-card
-  {
-      width: 12%;
-      text-align:left;
-      min-width: 150px;
-      display:inline-block;    
-      margin: 1%;
-      font-family: avenir-lt-w01_35-light1475496,sans-serif;
-
-  }
-  .collectionTitle{
-    color: #126D9B; 
-    font-family: arial,dotum,helvetica,sans-serif;
-
-  }
-  mat-expansion-panel, mat-expansion-panel-header{
-    font-family: avenir-lt-w01_35-light1475496,sans-serif;
-  }
+}
+mat-expansion-panel, mat-expansion-panel-header{
+  font-family: avenir-lt-w01_35-light1475496,sans-serif;
+}

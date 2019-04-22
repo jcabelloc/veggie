@@ -1,12 +1,15 @@
-
+ <!-- Div to the visualization of the add-to-cart popup window-->
 <div *ngIf="product != null" class="container">
+  <!-- Form to collect the quantity of products that will be added-->
   <form #addToCartForm="ngForm" (ngSubmit)="onSubmit(addToCartForm)">
-
-  <mat-card class="example-card">
+  <!-- Card to show the product detail to user-->
+  <mat-card class="product-card">
+    <!-- Header of the product info-->
     <mat-card-header>
       <mat-card-title>{{product.name}}</mat-card-title>
       <mat-card-subtitle>{{product.price | currency}}</mat-card-subtitle>
     </mat-card-header>
+    <!-- Image of the product-->
     <img mat-card-image [src]="product.url" alt="product.filename">
     <mat-card-content>
       <mat-form-field appearance="standard">
@@ -16,6 +19,7 @@
         <mat-hint>Hint</mat-hint>
       </mat-form-field>
     </mat-card-content>
+    <!-- Button to confirm the quantity of products-->
     <mat-card-actions>
       <button type = "submit" mat-button [disabled]="!addToCartForm.form.valid">ADD TO CART</button>
     </mat-card-actions>

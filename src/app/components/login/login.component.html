@@ -1,10 +1,13 @@
 <br>
 <br>
+<!-- Div to control the elements inside this component -->
 <div class="container">
+  <!-- Div is shown is user is authenticated-->
   <div *ngIf="afAuth.user | async as user; else showLogin">
     <h3 class="titleLogin">Hello {{ user.displayName }}!</h3>
     <button mat-button class="logoutBtn" (click)="logout()">Logout</button>
   </div>
+  <!-- Div is shown is user is NOT authenticated-->
   <ng-template #showLogin>
     <h3 class="titleLogout">Please login.</h3>
     <button mat-button class="loginBtn" (click)="login()">Login with Google</button>
@@ -12,6 +15,7 @@
   <br>
   <hr>
   <br>
+  <!-- Div and button to route user to the pure HTML/CSS component-->
   <div >
     <h3 class="titleLogin">Go to User Information form</h3>
     <button [routerLink]="['/user-info']" mat-button class="logoutBtn" >User Info</button>

@@ -1,4 +1,4 @@
-
+/* CSS to define colors and styles */
 footer{
     background-color: #126D9B;
     font: normal 100% Sans-Serif;
@@ -6,6 +6,7 @@ footer{
 
 }
 
+/* CSS to define colors and styles to text on our footer */
 .footer_text{
     text-align: center;
     color: #D8FBE8;

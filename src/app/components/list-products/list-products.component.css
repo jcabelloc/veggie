@@ -1,29 +1,20 @@
-
-  
+  /* CSS to have the container centering all elements */
   .container::after {
     content: "";
     clear: both;
     display: table;
   }
+  .container
+  {
+      text-align:center;
+      width:100%;
+      max-width: 950px;
+      margin: 5% auto;
+  }
 
-  .container1 {
-    width: 100%;
-    max-width: 900px;
-    margin: 5% auto;
-  }
-  
-  .example-card1 {
-    float: left;
-    width: 27.5%;
-    min-width: 200px;
-    margin: 1%;
-
-  }
-  .img-card1{
-    height: 160px;
-  }
-  
-  .example-card
+  /* CSS to show each product propertly*/
+ 
+.product-card
 {
     margin:1px;
     width: 26%;
@@ -34,14 +25,7 @@
     font-family: avenir-lt-w01_35-light1475496,sans-serif;
 
 }
-.container
-{
-    text-align:center;
-    width:100%;
-    max-width: 950px;
-    margin: 5% auto;
-}
-
+/* CSS to align the height of the images*/
 .mat-card img{
   height: 11.6em;
 
